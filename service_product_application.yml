@@ -18,7 +18,7 @@ eureka:
     service-url:
       defaultZone: http://localhost:7001/eureka/
 mybatis-plus:
-  mapper-locations: classpath:itsource/aigou/mapper/*Mapper.xml
+  mapper-locations: classpath:myjava/aigou/mapper/*Mapper.xml
   type-aliases-package: itsource.aigou.domain
 ---
 server:
@@ -38,4 +38,4 @@ eureka:
       defaultZone: http://localhost:7001/eureka/
 mybatis-plus:
   mapper-locations: classpath:itsource/aigou/mapper/*Mapper.xml
-  type-aliases-package: itsource.aigou.domain
+  type-aliases-package: myjava.aigou.domain
