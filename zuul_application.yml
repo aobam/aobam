@@ -20,7 +20,7 @@ zuul:
   prefix: "/aigou"
   ignored-services: "*"
   routes:
-    plat.serviceId: plat-service
+    plat.serviceId: plat-provider
     plat.path: /plat/**
     product.serviceId: product-service
     product.path: /product/**
@@ -43,7 +43,7 @@ zuul:
   prefix: "/aigou"
   ignored-services: "*"
   routes:
-    plat.serviceId: plat-service
+    plat.serviceId: plat-provider
     plat.path: /plat/**
     product.serv*iceId: product-service
     product.path: /product/*
