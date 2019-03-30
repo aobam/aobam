@@ -1,18 +1,33 @@
+spring:
+  profiles:
+    active:
+      - dev
+---
+#端口号
 server:
-  port: 1299
+  port: 8001
 eureka:
+  #服务注册
   client:
     service-url:
       defaultZone: http://localhost:7001/eureka
-  instance:
-    prefer-ip-address: true
 spring:
+  #服务名称
   application:
-    name: spring-cloud-config-server
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/wbls8411/micro-wb.git  #git文件地址
-          username: aidan20080709@126.com 
-          password: wenbing888
+    name: PLAT-PROVIDER
+  profiles: dev #开发环境
+
+---
+#端口号
+server:
+  port: 8002
+eureka:
+  #服务注册
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+spring:
+  #服务名称
+  application:
+    name: PLAT-PROVIDER-TEST
+profiles: test #开发环境
