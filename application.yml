@@ -1,18 +1,34 @@
+spring:
+  profiles:
+    active: dev
+---
 server:
-  port: 1299
+  port: 8001
+spring:
+  application:
+    name: COMMIT-SERVICE
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/aigou
+      username: root
+      password: 123456
+  profiles: dev
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:7001/eureka
-  instance:
-    prefer-ip-address: true
+      defaultZone: http://localhost:7001/eureka/
+mybatis-plus:
+  mapper-locations: classpath:itsource/aigou/mapper/*Mapper.xml
+  type-aliases-package: itsource.aigou.domain
+---
+server:
+  port: 8002
 spring:
   application:
-    name: spring-cloud-config-server
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/wbls8411/micro-wb.git  #git文件地址
-          username: aidan20080709@126.com 
-          password: wenbing888
+    name: COMMIT-SERVICE-TEST
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/aigou_test
+      username: root
+      password: 123456
+profiles: test
