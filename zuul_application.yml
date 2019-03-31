@@ -17,6 +17,12 @@ eureka:
     instance-id: gateway-9527.com
     prefer-ip-address: true
 zuul:
+  max:
+    host:
+      connections: 500
+  host:
+    socket-timeout-millis: 60000
+    connect-timeout-millis: 60000
   prefix: "/aigou"
   ignored-services: "*"
   routes:
@@ -24,9 +30,6 @@ zuul:
     plat.path: /plat/**
     product.serviceId: product-service
     product.path: /product/**
-    host:
-        connect-timeout-millis: 20000
-        socket-timeout-millis: 100000
 
 ---
 server:
@@ -43,10 +46,16 @@ eureka:
     instance-id: gateway-9528.com
     prefer-ip-address: true
 zuul:
+  max:
+    host:
+      connections: 500
+  host:
+    socket-timeout-millis: 60000
+    connect-timeout-millis: 60000
   prefix: "/aigou"
   ignored-services: "*"
   routes:
     plat.serviceId: plat-provider
     plat.path: /plat/**
-    product.serv*iceId: product-service
-    product.path: /product/*
+    product.serviceId: product-service
+    product.path: /product/**
