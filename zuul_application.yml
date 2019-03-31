@@ -25,8 +25,9 @@ zuul:
     product.serviceId: product-service
     product.path: /product/**
     host:
-        connect-timeout-millis: 10000
-        socket-timeout-millis: 60000
+        connect-timeout-millis: 20000
+        socket-timeout-millis: 100000
+
 ---
 server:
   port: 9528
